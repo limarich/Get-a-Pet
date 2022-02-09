@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 node_modules
 .env
+=======
+.env
+node_modules
+>>>>>>> cc17deb76396ab8214fd3dd3511137e4f68cea80
 /public/images
