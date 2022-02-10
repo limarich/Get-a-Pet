@@ -13,11 +13,18 @@ app.use(cors({ credentials: true, origin: "https://localhost:3000" }));
 // PUBLIC FOLDER FOR IMAGES
 app.use(express.static("public"));
 
+//
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
 // ROUTES
 const UserRoutes = require("./routes/userRoutes");
-// const petsRoutes = require("../routes/petRoutes");
+const petsRoutes = require("./routes/petRoutes");
 
 app.use("/users", UserRoutes);
-// app.use(petsRoutes);
+app.use("/pets", petsRoutes);
+
 app.use(errors());
 app.listen(5000);

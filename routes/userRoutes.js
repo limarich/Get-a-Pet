@@ -11,7 +11,7 @@ const { imageUpload } = require("../helpers/image-upload");
 router.post(
   "/register",
   celebrate(
-    { body: Joi.object().keys(Schemas.registerSchema) },
+    { body: Joi.object().keys(Schemas.userSchema) },
     { abortEarly: false }
   ),
   UserController.register

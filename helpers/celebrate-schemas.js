@@ -1,6 +1,6 @@
 const { Joi } = require("celebrate");
 
-const registerSchema = {
+const userSchema = {
   name: Joi.string().required(),
   email: Joi.string().email().required(),
   password: Joi.string().required(),
@@ -18,8 +18,25 @@ const updateSchema = {
   confirmPassword: Joi.string(),
   phone: Joi.string(),
 };
+const petSchema = {
+  name: Joi.string().required(),
+  age: Joi.number().required(),
+  weight: Joi.number().required(),
+  color: Joi.string().required(),
+  images: Joi.string(),
+};
+const updatePetSchema = {
+  name: Joi.string().required(),
+  age: Joi.number().required(),
+  weight: Joi.number().required(),
+  color: Joi.string().required(),
+  images: Joi.string(),
+  available: Joi.boolean(),
+};
 module.exports = {
-  registerSchema,
+  userSchema,
   loginSchema,
   updateSchema,
+  petSchema,
+  updatePetSchema,
 };
